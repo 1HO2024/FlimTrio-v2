@@ -1,0 +1,12 @@
+.homePage {
+  display: flex;
+  flex-direction: column;
+  height: 180vh;
+}
+
+.homePage > * {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+}

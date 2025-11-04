@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'MyFont'; /* 폰트 이름 */
+  src: url('/fonts/PRETENDARDREGULAR.OTF') format('opentype'); /* 형식 수정 */
+
+}

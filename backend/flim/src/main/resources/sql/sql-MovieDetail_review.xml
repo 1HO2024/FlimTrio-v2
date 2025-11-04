@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.flim.mapper.MovieDetailReviewMapper">
+	
+	<resultMap id="reviewResultMap" type="com.example.flim.dto.MovieDetailDTO">
+    	<result property="review_idx" column="review_idx"/>
+    	<result property="user_idx" column="user_idx"/>
+    	<result property="nickname" column="nickname"/>
+   	 	<result property="review_rating" column="review_rating"/>
+    	<result property="review_comment" column="review_comment"/>
+    	<result property="write_date" column="write_date"/>
+    	<result property="update_date" column="update_date"/>
+    </resultMap>
+	
+	 <select id="getReview" resultMap="reviewResultMap">
+	    SELECT 
+	      r.review_idx, 
+	      r.user_idx, 
+	      r.ID, 
+	      r.review_rating, 
+	      r.write_date, 
+	      r.review_comment, 
+	      r.update_date,
+	      u.nickname
+		FROM      review r
+		LEFT JOIN users u ON r.user_idx = u.user_idx
+		WHERE     r.ID = #{ID}
+	 </select>
+	
+	
+	<select id="isWrite">
+	    SELECT COUNT(*) > 0 FROM review
+	    WHERE user_idx  = #{user_idx}
+	    AND ID          = #{ID}
+    </select>
+    
+	<insert id="writeReview">
+		INSERT INTO review (
+	     user_idx,
+	     ID, 
+	     review_rating, 
+	     review_comment
+	    ) 
+		VALUES (
+		 #{user_idx},
+		 #{ID},
+		 #{review_rating},
+		 #{review_comment}
+		 )
+	</insert>
+	
+   <update id="updateReview">
+	    UPDATE review
+	    SET 
+	     review_rating    = #{review_rating}, 
+	     review_comment   = #{review_comment},
+	     update_date =  NOW()
+	    WHERE  review_idx = #{review_idx}
+	    AND  user_idx     = #{user_idx}
+	    AND  ID           = #{ID}
+    </update>
+	
+	<delete id="deleteReview">
+		DELETE FROM review
+		WHERE review_idx   = #{review_idx}
+	    AND user_idx       = #{user_idx}
+	</delete>
+	
+   
+	
+
+	
+</mapper>

@@ -1,0 +1,125 @@
+.modalLogo {
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signuph2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.inputField {
+  width: 100%;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+  .inputField input {
+    width: 300px;
+    height: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 5px; 
+  }
+
+.EmailInputField{
+  display: flex;
+  width: 100%;
+  margin-right: 15px;
+  
+}
+
+.EmailInputField input {
+  width: 240px;
+  height: 20px;
+  padding: 10px;
+  padding-right: 63px;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 5px; 
+  margin-bottom: 15px;
+}
+
+.verificationButton {
+  text-align: center;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  font-size: 14px; /* 선택 사항 */
+}
+
+
+.signupVerificationMessage {
+ display: block;
+  width: 100%;
+  font-size: 0.9rem;
+  color: black;
+  text-align: left;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: -10px;
+}
+
+
+
+.error {
+  color: red;
+  font-size: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.loginPrompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.loginPrompt span {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.loginButton {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.loginButton:hover {
+  text-decoration: underline;
+}
+
+.modalButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.modalButton:hover {
+  background-color: #0056b3;
+}

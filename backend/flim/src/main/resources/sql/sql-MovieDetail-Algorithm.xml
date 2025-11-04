@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.flim.mapper.MovieDetailAlgorithmMapper">
+
+<select id="getMovieforAl">
+	SELECT DISTINCT m.ID, m.title, m.overview, m.genre_ids, COALESCE(k.keyword, '') AS keyword
+		FROM (
+		    SELECT * 
+		    FROM movie 
+		    WHERE overview != '' 
+		      AND genre_ids != '' 
+		      AND genre_ids IS NOT NULL 
+		    ORDER BY popularity DESC 
+		) m
+		LEFT JOIN keywords k ON m.ID = k.movie_id
+		CROSS JOIN (
+		    SELECT 1 AS n UNION ALL 
+		    SELECT 2 UNION ALL 
+		    SELECT 3 UNION ALL 
+		    SELECT 4 UNION ALL 
+		    SELECT 5 UNION ALL 
+		    SELECT 6 UNION ALL 
+		    SELECT 7
+		) n
+		WHERE m.ID != #{ID}
+		  AND k.keyword != ''
+		  AND EXISTS (
+		      SELECT 1
+		      FROM movie m2
+		      WHERE m2.ID = #{ID}
+		      AND FIND_IN_SET(TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(m2.genre_ids, ',', n.n), ',', -1)), m.genre_ids) > 0
+		  )  
+		LIMIT 1000;
+
+</select>
+
+<select id="getUserOverview">
+    SELECT m.ID, m.title, m.overview, m.genre_ids, COALESCE(k.keyword, '') AS keyword
+    FROM movie m
+    LEFT JOIN keywords k ON m.ID = k.movie_id
+    WHERE m.ID = #{ID}
+</select>
+
+
+<select id="getMovieInfo">
+	SELECT ID,title,poster_path
+	FROM movie
+	WHERE title = #{title}
+	LIMIT 1
+</select>
+
+
+
+
+
+
+</mapper>

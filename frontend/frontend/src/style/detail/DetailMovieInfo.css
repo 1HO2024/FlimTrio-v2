@@ -1,0 +1,10 @@
+.DetailMovieInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.DetailMovieInfo  {
+  font-size: 16px;
+  color: black;
+}

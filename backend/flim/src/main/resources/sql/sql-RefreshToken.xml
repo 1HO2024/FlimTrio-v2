@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+ <mapper namespace="com.example.flim.mapper.RefreshTokenMapper">
+	
+	
+	 <insert id="save">
+        INSERT INTO refresh_tokens (email, refresh_token, issued_at, expires_at)
+        VALUES (#{email}, #{refreshToken}, #{issuedAt}, #{expireAt})
+    </insert>
+
+    <select id="findByRefreshToken" resultType="com.example.flim.entity.RefreshTokenEntity">
+        SELECT * FROM refresh_tokens WHERE refresh_token = #{refreshToken}
+    </select>
+
+    <delete id="deleteByEmail">
+        DELETE FROM refresh_tokens WHERE email = #{email}
+    </delete>
+	
+	
+
+</mapper>

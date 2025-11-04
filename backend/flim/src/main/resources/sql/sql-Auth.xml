@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.flim.mapper.AuthMapper">
+    
+    <select id="isSignup">
+		SELECT COUNT(*)
+		FROM users 
+		WHERE email = #{email}
+	</select>
+ 	
+ 	
+   <insert id="insertUser">
+    INSERT INTO users( 
+      nickname,
+      email, 
+      password, 
+      phonenumber
+    )
+    VALUES(
+      #{nickname}, 
+      #{email},
+      #{password}, 
+      #{phoneNumber}
+      )
+    </insert>
+
+   <select id="getUserIdx"> 
+		SELECT user_idx 
+		FROM   users 
+		WHERE  email = #{email}
+	</select>
+	
+   <select id="getNickname"> 
+		SELECT nickname 
+		FROM   users 
+		WHERE  email = #{email}
+	</select>
+	
+   <select id="getPhonenumber"> 
+		SELECT phoneNumber 
+		FROM   users
+		WHERE  email = #{email}
+	</select>
+	
+	<select id="findByEmail">
+		SELECT * FROM users 
+		WHERE email = #{email}
+	</select>
+	
+	
+	<update id="updateProfile">
+		UPDATE users  
+		SET nickname    = #{nickname},
+		    password    = #{hasedupdatePass}
+		WHERE email     = #{email}
+	</update>
+	
+	<update id="updateProfileNopass">
+		UPDATE users  
+		SET nickname    = #{nickname}
+		WHERE email     = #{email}
+	</update>
+	
+	<select id="existsByUserIdAndEmail">
+		SELECT COUNT(*)  
+		FROM users 
+		WHERE email     = #{email} 
+	</select>
+	
+	<update id="updateTempPassword">
+		UPDATE users  
+		SET password    = #{hashedTempPassword}
+		WHERE email     = #{email}
+	</update>
+	
+</mapper>

@@ -1,0 +1,104 @@
+
+.MyLikesHeader  {
+  display: flex; 
+  margin-bottom: 20px; 
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.MytitleIcon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #f0a500;
+}
+
+/* 포스터 */
+.LikeMoviePoster {
+  width: 100%; /* 부모 요소의 너비에 맞게 */
+  height: 250px; /* 고정된 높이로 설정 */
+  object-fit: contain; /* 이미지가 카드에 맞게 잘리도록 설정 */
+}
+
+/* MyLikeCard 카드 스타일 */
+.MyLikeCard {
+  display: inline-block; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  width: 220px;
+  padding-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 5px;
+  transition: transform 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+/* hover 시 크기 변화 */
+.MyLikeCard:hover {
+  transform: scale(1.2); 
+   z-index: 10;
+   cursor: pointer;
+}
+
+/* 제목 스타일 */
+.LikeMovieTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  transition: transform 0.3s ease, left 0.3s ease; 
+  position: relative;
+  font-size: 14px;
+}
+
+/* 슬라이드 효과 */
+.MyLikeCard:hover .LikeMovieTitle {
+  -webkit-line-clamp: unset; 
+  max-height: none;
+  overflow: visible;
+}
+
+/* 빨간 하트 버튼 스타일 */
+.HeartCancleButton {
+  position: absolute; 
+  top: -1px;
+  right: 1px;  
+  padding: 5px;
+  background-color: transparent;
+  font-size: 30px;
+  cursor: pointer;
+   display: flex;
+   align-items: center; 
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.TrashIcon {
+  position: absolute;
+  font-size: 20px;
+  transition: opacity 0.3s ease;
+  opacity: 0; 
+  color: #404040;
+}
+
+.MyLikeCard:hover .TrashIcon {
+  opacity: 1; 
+}
+
+.ToggleShowButton {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #ddd;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  border-radius: 50px; 
+}

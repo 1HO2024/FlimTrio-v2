@@ -1,0 +1,260 @@
+.DetailModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DetailModal {
+  background: white; 
+  padding: 20px;
+  border-radius: 8px;
+  width: 800px;  
+  height: 580px; 
+  z-index: 1010;
+  overflow-y: auto; 
+}
+
+.DetailModalHeader{
+  margin-bottom: -25px;
+  margin-left: 10px;
+}
+.BackButton{
+  display: flex;
+  cursor: pointer;
+  color:  #181818;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 위쪽 섹션 */
+.DetailPageMainContent {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+}
+
+/* 포스터 */
+.DetailPageMoviePoster {
+  
+}
+
+.DetailMovieHeader{
+  margin-top: -35px;
+  margin-left: 28px;
+}
+.DetailMovieHeaderTitle{
+  font-size: 16px;
+}
+/*좋아요 버튼*/
+
+.DetailLikeButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.Writelike-icon,
+.like-icon,
+.Canclelike-icon {
+  font-size: 20px;
+  margin-left: -25px;
+  padding: 2px;
+  
+}
+
+.Writelike-icon {
+  opacity: 1;  /* 기본적으로 좋아요 없는 상태 보이도록 */
+}
+
+
+
+
+/* 예고편 */
+.DetailPageTrailer {
+  padding: 20px;
+}
+
+.DetailPageMoviePoster img {
+  width: 100%;
+  max-width: 300px;
+}
+
+
+
+/* 영화 정보 */
+.DetailPageMovieInfoSection {
+  padding: 20px;
+  width: 680px;
+}
+
+
+/*배우 포스터*/
+.DetailCastSection {
+  padding: 20px;
+}
+
+.DetailCastSectionHeader {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  margin-bottom : 10px;
+}
+
+
+.DetailCastGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+
+.CastCard {
+  width: 100px;
+  text-align: center;
+}
+
+.CastCard img {
+  width: 100px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 리뷰 */
+.DetailPageReviews {
+  padding: 20px;
+}
+
+.DetailPageReviewsHeader {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  margin-bottom : 10px;
+}
+
+.DetailPageReviewsGrid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.ReviewCard {
+  text-align: left;
+  width: 160px;
+  height: 140px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.ReviewUserInfo{
+ display: flex;
+ align-items: center;
+ text-align: center;
+}
+
+.DetailTimeAgo{
+  align-items: center;
+  font-size: 8px;
+  margin-left: 55px;
+  font-weight: bold;
+}
+
+.ReviewComment{
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/*추천 영화*/
+.Recommend {
+  padding:20px 20px;
+  height: 200px;
+}
+
+.DetailRecommendHeader {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  margin-bottom : 10px;
+}
+
+.RecommendGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.RecommendCard {
+   width: 125px;
+   text-align: center;
+}
+
+.RecommendCard img {
+  width: 125px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.RecommendCard:hover{
+  cursor: pointer;
+}
+
+
+/*버튼---------------------------------------------------------------------------------------*/
+
+
+
+/*더보기 버튼 */
+.ShowMoreButton {
+  margin-right:  70px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+
+
+/*리뷰 버튼 */
+.ReviewButton{
+margin-right: 70px;
+}
+
+.ReviewWriteButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.ShowMoreReviewButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.DetailLikeButton{
+  background-color: transparent;
+  border: none; 
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 20px;
+}

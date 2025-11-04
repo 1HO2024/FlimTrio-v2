@@ -1,0 +1,14 @@
+.DetailMovieReviews {
+  padding: 20px;
+}
+
+.DetailMovieReviews ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.DetailMovieReviews li {
+  text-align: left;
+  color: black;  
+  padding: 8px;
+}

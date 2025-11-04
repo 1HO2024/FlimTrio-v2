@@ -1,0 +1,98 @@
+.starRating {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.star {
+  color: gold;
+  font-size: 18px;
+}
+
+.ratingNumber {
+  font-size: 14px;
+  color: #888;
+  margin-left: 5px;
+}
+
+
+.topHome {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 20px;
+  overflow-x: hidden;
+
+}
+
+.titleContainer {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.titleIcon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #f0a500;
+}
+
+.titleText {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.posterGrid {
+  display: flex;
+  transition: transform 1s ease;
+  width: 100%; 
+}
+
+.posterContainer {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;  
+}
+
+.rankingBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  /* background-color: rgba(0, 0, 0, 0.7);  */
+  background-color: red; 
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+  z-index: 2; 
+  transition: transform 0.3s ease; 
+}
+
+.moviePoster {
+  width: 217px;
+  height: 320px;
+  border: 1px solid ghostwhite;
+  border-radius: 3px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movieTitle {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  width: 220px; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.posterContainer:hover {
+  transform: scale(1.05);
+}

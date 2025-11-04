@@ -1,0 +1,19 @@
+.DetailMovieTrailer iframe {
+  width: 450px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.NoDetailMovieTrailer{
+width:450px;
+height:330px;
+border-radius: 10px;
+border: 2px solid ghostwhite;
+}
+
+.NoTrailerMessage {
+  margin-top: 150px; 
+  margin-left: 130px; 
+  font-weight: bold; 
+  font-size: 16px;
+}

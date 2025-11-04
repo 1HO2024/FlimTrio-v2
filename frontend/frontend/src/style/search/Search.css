@@ -1,0 +1,110 @@
+/* 돋보기 효과 css */
+
+@keyframes fadeinLeft {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinRight {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(20%);
+    opacity: 1;
+  }
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  height: 30px;
+}
+
+.searchInputWrapper {
+  position: relative;
+  width: 100%;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.searchInputWrapper.visible {
+  animation: fadeinLeft 0.5s ease-in-out forwards;
+}
+
+.searchInputWrapper.hidden {
+  animation: fadeinRight 0.3s ease-in-out forwards;
+}
+
+.searchInputWrapper.initial {
+  animation: none;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: black;
+}
+
+.searchResults {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.searchResultItem {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.searchResultItem:hover {
+  background-color: #f1f1f1;
+}
+
+.searchLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.noResults {
+  padding: 10px;
+  color: #888;
+}

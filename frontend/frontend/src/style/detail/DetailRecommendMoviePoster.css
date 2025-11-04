@@ -1,0 +1,11 @@
+
+.DetailRecommendMoviePoster {
+  display: flex;
+  width: 250px;
+  height: 200px;
+}
+
+.DetailRecommendMoviePoster img {
+  border-radius: 10px;
+   border: 1px solid ghostwhite;
+}

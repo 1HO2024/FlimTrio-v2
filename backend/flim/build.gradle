@@ -1,0 +1,97 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	
+	   // Apache Lucene (TF-IDF)
+    implementation 'org.apache.lucene:lucene-core:8.11.0'   // 버전 일치
+    implementation 'org.apache.lucene:lucene-analyzers-common:8.11.0'  // 버전 일치
+    implementation 'org.apache.lucene:lucene-analyzers-nori:8.11.0'  // 버전 일치
+    
+	// Apache Commons Math3 (코사인 유사도 계산)
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+	
+    //json 의존성
+    implementation 'org.json:json:20210307'
+    
+    
+    //.env 설정
+    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+    //jwt토큰 3.20
+    implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
+    
+    //Spring Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+     
+    //implementation 'org.springframework.security:spring-security-web:5.7.6' 
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'   
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'jakarta.persistence:jakarta.persistence-api:2.2.3' // 최신 버전 사용 가능
+
+    // mail 설정
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+	
+	implementation 'com.github.ben-manes.caffeine:caffeine:3.1.8'
+			
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.12.1'
+
+
+    // https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api
+    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.2'
+    // https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api
+    implementation group: 'jakarta.activation', name: 'jakarta.activation-api', version: '2.1.3'
+// https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl
+    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '4.0.5'
+
+
+    // 크롤링할때 필요한 셀레니움 라이브러리 - 셀레니움 4.10 버전 이후 chrom Driver 자동설치
+// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation 'org.seleniumhq.selenium:selenium-java:4.28.1'
+    // WebDriverManager를 추가하여 ChromeDriver 자동 관리
+//    implementation 'io.github.bonigarcia:webdrivermanager:5.3.1'
+    //    페이징
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:2.1.0'
+    
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

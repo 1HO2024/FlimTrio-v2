@@ -1,0 +1,53 @@
+.SRsearchResults {
+  padding: 10px;
+  text-align: center;
+}
+
+.SRsearchHeader {
+  margin-bottom: 30px;
+}
+
+.SRsearchHeader h1 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Anton', sans-serif;
+}
+
+.SRposterGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);  
+  gap: 20px;
+  justify-items: center;
+}
+
+.SRposter {
+  transition: transform 0.5s ease;
+}
+.SRposter img {
+  width: 200px;
+  height: 300px;
+  cursor: pointer;
+  object-fit: fill;
+  border: 1px solid ghostwhite;
+}
+
+.SRposter p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.SRposter:hover {
+  transform: scale(1.1);
+}
+
+.NoSRsearch {
+  font-size: 23px;
+  margin-top: 100px;
+  text-align: center;      
+  font-weight: bold;       
+  color: black;              
+  position: absolute;     
+
+}
+

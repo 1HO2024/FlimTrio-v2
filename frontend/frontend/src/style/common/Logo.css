@@ -1,0 +1,23 @@
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Rockwell', serif;
+  cursor: pointer;
+}
+
+.logo span:first-child {
+  color: #007bff;  
+}
+
+.logo span:last-child {
+  color: #1D3C6B;  
+}
+
+.logo:hover span:first-child {
+  color: #0056b3;  
+}
+
+.logo:hover span:last-child {
+  color: #0056b3;  
+}
