@@ -23,8 +23,13 @@
 
 # 📊 ERD & 프로젝트 문서 
 <details>
-<summary><b>ERD</b></summary>
+<summary><b>기존ERD</b></summary>
 <img width="800" height="617" alt="image" src="https://github.com/user-attachments/assets/9d51a235-d948-4b80-b1ab-21946bf43471" />
+</details>
+
+<details>
+<summary><b>재설계ERD</b></summary>
+<img width="2800" height="960" alt="image" src="https://github.com/user-attachments/assets/489c83fa-53cd-4f5f-a536-f80d04c4b157" />
 </details>
 
 <details>
